@@ -7,7 +7,7 @@ use Inertia\Inertia;
 use App\Models\Post;
 use Illuminate\Support\Facades\Validator;
    
-class PostController extends Controller
+class PostsController extends Controller
 {
     /**
      * Show the form for creating a new resource.
@@ -17,6 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        return view('posts.index');
         return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
   
